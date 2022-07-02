@@ -16,21 +16,44 @@
         public int AccountNumber
         {
             get => _AccountNumber;
-            set => _AccountNumber = value;
         }
 
         public double Balance
         {
             get => _Balance;
-            set => _Balance = value;
         }
 
         public Type AccountType
         {
             get { return _Type; }
-            set => _Type = value;
         }
-        
-          
+        public BankAccount()
+        {
+            _AccountNumber = 0;
+            _Balance = 0;
+            _Type = Type.current;
+            BankAcc();
+        }
+
+        public BankAccount( double balance)
+        {
+            _Balance = balance;
+            _Type = Type.current;
+            BankAcc();
+        }
+
+        public BankAccount(Type type)
+        {
+            _Type = type;
+            _Balance = default;
+            BankAcc();
+        }
+        public BankAccount(double balance,Type type)
+        {
+            _Balance = balance;
+            _Type = type;
+            BankAcc();
+        }
+
     }
 }
