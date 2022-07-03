@@ -10,6 +10,10 @@ Console.WriteLine($"Баланс {bankAccount5.Balance},номер счета {b
 bankAccount5.MoveCash(bankAccount4, 500);
 Console.WriteLine($"Баланс {bankAccount5.Balance},номер счета {bankAccount5.AccountNumber}, тип счета {bankAccount5.AccountType}");
 
+//3.2
+StringChanger stringChanger = new();
+Console.WriteLine($"{stringChanger.Reverse("Леша на полке клопа нашел")}");
+
 
 
 
