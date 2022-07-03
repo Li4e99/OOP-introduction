@@ -14,6 +14,28 @@ Console.WriteLine($"Баланс {bankAccount5.Balance},номер счета {b
 StringChanger stringChanger = new();
 Console.WriteLine($"{stringChanger.Reverse("Леша на полке клопа нашел")}");
 
+// 3.3
+string[] text = new string[2];
+text[0] = "Кучма Андрей Витальевич & Kuchma@mail.ru";
+text[1] = "Мизинцев Павел Николаевич & Pasha@mail.ru";
 
+File.WriteAllLines("text.txt", text);
+string filename = "text.txt";
+string[] fileLines = File.ReadAllLines(filename);
+for (int i = 0; i < fileLines.Length; i++)
+    fileLines[i] = fileLines[i].Trim();
+
+text text1 = new(fileLines[0]);
+text text2 = new(fileLines[1]);
+
+string[] emails = new string[2];
+emails[0] = text1.Email;
+emails[1] = text2.Email;
+
+File.WriteAllLines("text2.txt", emails);
+Console.WriteLine("Создан файл text2.txt со списком e-mails.");
+Console.ReadKey(true);
+
+Console.ReadKey(true);
 
 
