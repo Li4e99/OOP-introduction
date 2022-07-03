@@ -3,19 +3,24 @@
     public class BankAccount
     {
         private static int _accNumber = 0;
+
         private int _AccountNumber;
+
         private decimal _Balance;
+
         public enum Type { credit, deposit, current }
+
         private Type _Type;
         /// <summary>
         /// Метод для генерации уникального номера карты
         /// </summary>
         /// <returns></returns>
-        public int BankAcc()
+        private static int CreateBankAccNumber()
         {
-            _AccountNumber = _accNumber++;
-            return _AccountNumber;
+            
+            return _accNumber++;
         }
+
         public int AccountNumber
         {
             get => _AccountNumber;
@@ -41,7 +46,7 @@
             _AccountNumber = 0;
             _Balance = 0;
             _Type = Type.current;
-            BankAcc();
+            _AccountNumber = CreateBankAccNumber();
         }
         /// <summary>
         /// Коструктор для заполнения поля баланс
@@ -51,7 +56,7 @@
         {
             _Balance = balance;
             _Type = Type.current;
-            BankAcc();
+            _AccountNumber = CreateBankAccNumber();
         }
         /// <summary>
         /// конструктор для заполнения поля тип банковского счета
@@ -61,7 +66,7 @@
         {
             _Type = type;
             _Balance = default;
-            BankAcc();
+            _AccountNumber = CreateBankAccNumber();
         }
         /// <summary>
         /// конструктор для заполнения баланса и типа банковского счета
@@ -72,7 +77,7 @@
         {
             _Balance = balance;
             _Type = type;
-            BankAcc();
+            _AccountNumber = CreateBankAccNumber();
         }
         /// <summary>
         /// Метод для внесения денег
@@ -82,7 +87,6 @@
         public decimal AddMoney(decimal cash)
         {
             _Balance = _Balance + cash;
-            Console.WriteLine($"На Ваш счет зачислено {cash} рублей");
             return _Balance;
         }
         /// <summary>
