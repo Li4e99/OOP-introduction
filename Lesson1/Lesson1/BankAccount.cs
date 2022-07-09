@@ -101,16 +101,29 @@
                 if (cash <= _Balance)
                 {
                     _Balance = _Balance - cash;
-                    Console.WriteLine($"Остаток на Вашем балансе - {_Balance}");
+                    Console.WriteLine($"Остаток на Вашем балансе - {_Balance}");//мне кажется вынести это в Main не правильно, иначе в мейне придется прописывать это каждый раз при срабатывании метода.
                     return _Balance;
                 }
                 else
-                    Console.WriteLine("Недостаточно средств.");
+                    Console.WriteLine("Недостаточно средств.");//мне кажется вынести это в Main не правильно, иначе в мейне придется прописывать это каждый раз при срабатывании метода.
                 return _Balance;
             }
             else
                 _Balance = _Balance - cash;
-                Console.WriteLine($"Остаток на Вашем балансе - {_Balance}");
+                Console.WriteLine($"Остаток на Вашем балансе - {_Balance}");//мне кажется вынести это в Main не правильно, иначе в мейне придется прописывать это каждый раз при срабатывании метода.
+            return _Balance;
+        }
+        /// <summary>
+        /// Метод для перевода средств на другой счет
+        /// </summary>
+        /// <param name="account">Аккаунт откуда переводим деньги</param>
+        /// <param name="cash">Сумма для перевода</param>
+        /// <returns></returns>
+        public decimal MoveCash(BankAccount account, decimal cash)
+        {
+            account._Balance = account._Balance - cash;
+            _Balance = _Balance + cash;
+            Console.WriteLine($"Поступил перевод со счета {account._AccountNumber} на сумму {cash}"); //мне кажется вынести это в Main не правильно, иначе в мейне придется прописывать это каждый раз при срабатывании метода.
             return _Balance;
         }
 
