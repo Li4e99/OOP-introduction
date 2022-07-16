@@ -1,8 +1,8 @@
 ﻿public class Rational
 {
-    private int _Numerator; //числитель 
+    private readonly int _Numerator; //числитель 
 
-    private int _Denominator; //знаменатель
+    private readonly int _Denominator; //знаменатель
 
     public double RationalNumber => (double)_Numerator) / _Denominator;
 
