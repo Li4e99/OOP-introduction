@@ -4,7 +4,7 @@
 
     private int _Denominator; //знаменатель
 
-    public float RationalNumber => ((float)_Numerator) / ((float)_Denominator);
+    public double RationalNumber => (double)_Numerator) / _Denominator;
 
     public override string ToString() => $"{Numerator}/{Denominator}";
 
