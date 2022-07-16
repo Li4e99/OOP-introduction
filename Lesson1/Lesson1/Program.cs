@@ -1,18 +1,14 @@
 ﻿using Lesson1;
 
-//5.1
-Rational num1 = new Rational(1, 3);
-Rational num2 = new Rational(2, 3);
+//6.1
+BankAccount bankAccount1 = new(100500, BankAccount.Type.credit);
+BankAccount bankAccount2 = new(100501, BankAccount.Type.deposit);
+BankAccount bankAccount3 = new(100500, BankAccount.Type.credit);
+BankAccount bankAccount4 = new BankAccount(100500, BankAccount.Type.credit, 2);
 
-Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
-
-if (num1 < num2 == false)
-    Console.WriteLine($"{num1} < {num2}");
-else
-    Console.WriteLine($"{num1} > {num2}");
-
-Console.WriteLine($"{num1.RationalNumber}");
-
+Console.WriteLine(bankAccount1!=bankAccount3);
+Console.WriteLine(bankAccount3.Equals(bankAccount1));
+Console.WriteLine(bankAccount3.Equals(bankAccount4));
 
 
 Console.ReadKey(true);

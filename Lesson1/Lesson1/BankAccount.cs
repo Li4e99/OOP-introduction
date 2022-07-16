@@ -79,6 +79,12 @@
             _Type = type;
             _AccountNumber = CreateBankAccNumber();
         }
+        public BankAccount(decimal balance, Type type, int number)
+        {
+            _Balance = balance;
+            _Type = type;
+            _AccountNumber = number;
+        }
         /// <summary>
         /// Метод для внесения денег
         /// </summary>
@@ -127,6 +133,41 @@
             return _Balance;
         }
 
+        public static bool operator == (BankAccount account1, BankAccount account2)
+        {
+            return (account1.AccountNumber == account2.AccountNumber && account1.Balance == account2.Balance && account1.AccountType == account2.AccountType);
+        }
+
+        public static bool operator !=(BankAccount account1, BankAccount account2)
+        {
+            return (account1.AccountNumber != account2.AccountNumber || account1.Balance != account2.Balance || account1.AccountType != account2.AccountType);
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is not BankAccount other)
+            {
+                return false;
+            }
+
+            return AccountNumber == other.AccountNumber &&
+                   Balance == other.Balance &&
+                   AccountType == other.AccountType;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+              var hashCode = -1534900553;
+              hashCode = hashCode * -1521134295 ^ AccountType.GetHashCode();
+              hashCode = hashCode * -1521134295 ^ AccountNumber.GetHashCode();
+              hashCode = hashCode * -1521134295 ^ Balance.GetHashCode();
+                return hashCode;
+            }
+        }
+
+        public override string ToString() => $"{AccountNumber}\n {AccountType}\n {Balance}";
     }
 
 
