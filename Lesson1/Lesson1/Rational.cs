@@ -61,7 +61,7 @@
         return a;
     }
 
-    public static implicit operator float(Rational r1) => r1.RationalNumber;
+    public static implicit operator double(Rational r1) => r1.RationalNumber;
 
     public static implicit operator Rational(int r1) => new Rational(r1, 1);
 
