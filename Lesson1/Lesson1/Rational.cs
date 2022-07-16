@@ -10,7 +10,7 @@
 
     public Rational ()
     {
-        _Numerator = 1;
+        _Numerator = 0;
         _Denominator = 1;
     }
 
