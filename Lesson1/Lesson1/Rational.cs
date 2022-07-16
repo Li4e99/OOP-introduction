@@ -147,7 +147,7 @@
 
     public override bool Equals(object obj)
     {
-        if (!(obj is Rational))
+        if (obj is not Rational other)
         {
             return false;
         }
