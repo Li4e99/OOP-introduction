@@ -4,7 +4,7 @@
 
     private readonly int _Denominator; //знаменатель
 
-    public double RationalNumber => (double)_Numerator) / _Denominator;
+    public double RationalNumber => (double)_Numerator / _Denominator;
 
     public override string ToString() => $"{Numerator}/{Denominator}";
 
@@ -37,13 +37,11 @@
     public int Numerator
     {
         get => _Numerator; 
-        set => _Numerator = value; 
     }
 
     public int Denominator
     {
         get => _Denominator;
-        set => _Denominator = value;
     }
 
     /// <summary>Статический метод возвращающий наибольший общий делитель двух положительных чисел</summary>
