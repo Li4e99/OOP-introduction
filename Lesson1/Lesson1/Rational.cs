@@ -158,9 +158,12 @@
 
     public override int GetHashCode()
     {
-        var hashCode = -1534900553;
-        hashCode = hashCode * -1521134295 + Numerator.GetHashCode();
-        hashCode = hashCode * -1521134295 + Denominator.GetHashCode();
-        return hashCode;
+        unchecked
+        {
+              var hashCode = -1534900553;
+              hashCode = hashCode * -1521134295 ^ Numerator.GetHashCode();
+              hashCode = hashCode * -1521134295 ^ Denominator.GetHashCode();
+              return hashCode;
+        }
     }
 }
