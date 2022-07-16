@@ -152,9 +152,8 @@
             return false;
         }
 
-        var number = (Rational)obj;
-        return Numerator == number.Numerator &&
-               Denominator == number.Denominator;
+        return Numerator == other.Numerator &&
+               Denominator == other.Denominator;
     }
 
     public override int GetHashCode()
