@@ -1,6 +1,4 @@
-﻿namespace Lesson1
-{
-    public class text
+﻿  public class text
     {
 
         private string? firstName;
@@ -35,11 +33,11 @@
         public text(string s)
         {
             var split = s.Split(new char[] { ' ' });
-            this.firstName = split[0];
-            this.lastName = split[1];
-            this.patronymic = split[2];
-            this.email = split[4];
+            firstName = split[0];
+            lastName = split[1];
+            patronymic = split[2];
+            email = split[4];
 
         }
     }
-}
+

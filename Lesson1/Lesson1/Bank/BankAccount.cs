@@ -1,4 +1,4 @@
-﻿namespace Lesson1
+﻿namespace Lesson1.Bank
 {
     public class BankAccount
     {
@@ -17,7 +17,7 @@
         /// <returns></returns>
         private static int CreateBankAccNumber()
         {
-            
+
             return _accNumber++;
         }
 
@@ -102,7 +102,7 @@
         /// <returns></returns>
         public decimal TakeMoney(decimal cash)
         {
-            if (_Type != BankAccount.Type.credit)
+            if (_Type != Type.credit)
             {
                 if (cash <= _Balance)
                 {
@@ -116,7 +116,7 @@
             }
             else
                 _Balance = _Balance - cash;
-                Console.WriteLine($"Остаток на Вашем балансе - {_Balance}");//мне кажется вынести это в Main не правильно, иначе в мейне придется прописывать это каждый раз при срабатывании метода.
+            Console.WriteLine($"Остаток на Вашем балансе - {_Balance}");//мне кажется вынести это в Main не правильно, иначе в мейне придется прописывать это каждый раз при срабатывании метода.
             return _Balance;
         }
         /// <summary>
@@ -133,14 +133,14 @@
             return _Balance;
         }
 
-        public static bool operator == (BankAccount account1, BankAccount account2)
+        public static bool operator ==(BankAccount account1, BankAccount account2)
         {
-            return (account1.AccountNumber == account2.AccountNumber && account1.Balance == account2.Balance && account1.AccountType == account2.AccountType);
+            return account1.AccountNumber == account2.AccountNumber && account1.Balance == account2.Balance && account1.AccountType == account2.AccountType;
         }
 
         public static bool operator !=(BankAccount account1, BankAccount account2)
         {
-            return (account1.AccountNumber != account2.AccountNumber || account1.Balance != account2.Balance || account1.AccountType != account2.AccountType);
+            return account1.AccountNumber != account2.AccountNumber || account1.Balance != account2.Balance || account1.AccountType != account2.AccountType;
         }
 
         public override bool Equals(object obj)
@@ -159,10 +159,10 @@
         {
             unchecked
             {
-              var hashCode = -1534900553;
-              hashCode = hashCode * -1521134295 ^ AccountType.GetHashCode();
-              hashCode = hashCode * -1521134295 ^ AccountNumber.GetHashCode();
-              hashCode = hashCode * -1521134295 ^ Balance.GetHashCode();
+                var hashCode = -1534900553;
+                hashCode = hashCode * -1521134295 ^ AccountType.GetHashCode();
+                hashCode = hashCode * -1521134295 ^ AccountNumber.GetHashCode();
+                hashCode = hashCode * -1521134295 ^ Balance.GetHashCode();
                 return hashCode;
             }
         }
