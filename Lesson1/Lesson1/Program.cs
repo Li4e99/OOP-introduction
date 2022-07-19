@@ -1,18 +1,14 @@
-﻿using Lesson1.Bank;
+﻿//7.1
+ACoder aCoder1 = new("Виктор");
+Console.WriteLine(aCoder1.Decode());
+Console.WriteLine(aCoder1.Encode());
 
-//6.1
-BankAccount bankAccount1 = new(100500, BankAccount.Type.credit);
-bankAccount1.AccountType = BankAccount.Type.deposit;
-BankAccount bankAccount2 = new(100501, BankAccount.Type.deposit);
-BankAccount bankAccount3 = new(100500, BankAccount.Type.credit);
-BankAccount bankAccount4 = new BankAccount(100500, BankAccount.Type.credit, 2);
-
-Console.WriteLine(bankAccount1 != bankAccount3);
-Console.WriteLine(bankAccount3.Equals(bankAccount1));
-Console.WriteLine(bankAccount3.Equals(bankAccount4));
+BCoder bCoder1 = new("АндРей");
+Console.WriteLine(bCoder1.Decode());
+Console.WriteLine(bCoder1.Encode());
 
 
-//6.2
+//7.2
 Figure figure = new Figure();
 Console.WriteLine(figure);
 
